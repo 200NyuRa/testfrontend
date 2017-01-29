@@ -1,0 +1,76 @@
+$formCardSelector: '.form-card';
+
+#{$formCardSelector} {
+
+    &__card {
+        position: relative;
+        min-height: 255px;
+        max-width: 565px;
+        margin-bottom: 15px;
+
+        @media #{$media-tablet} {
+            margin-bottom: 35px;
+        }
+
+        @media #{$media-phone} {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+    }
+
+    &__fieldset {
+        max-width: 350px;
+        min-height: 235px;
+        position: relative;
+        padding: 15px;
+        padding-top: 20px;
+        background-color: $light-grey;
+        border-radius: 10px;
+        border: 1px solid $pale-grey;
+        z-index: 2;
+
+        @media #{$media-tablet} {
+            margin-bottom: 10px;
+        }
+
+        &_backside {
+            position: absolute;
+            right: 0;
+            top: 20px;
+            max-width: 370px;
+            padding-top: 80px;
+            padding-left: 215px;
+            padding-right: 15px;
+            z-index: 1;
+
+            @media #{$media-tablet} {
+                position: relative;
+                right: auto;
+                top: auto;
+                max-width: 350px;
+                width: auto;
+                padding-left: 193px;
+            }
+
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 25px;
+                display: block;
+                height: 40px;
+                background-color: $pale-grey;
+            }
+        }
+    }
+
+    &__row {
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

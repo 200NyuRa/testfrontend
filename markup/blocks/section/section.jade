@@ -1,0 +1,13 @@
+include ../heading/heading
+
+mixin section(data)
+    - data = data || {};
+
+    +b.section&attributes(attributes)
+        if(data.titleText || data.subtitleText)
+            +heading({
+                tag: data.titleTag,
+                title: data.titleText,
+                subtitle: data.subtitleText
+            }).__heading
+        block

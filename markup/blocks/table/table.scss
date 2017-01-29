@@ -1,0 +1,34 @@
+$tableSelector: ".table";
+
+#{$tableSelector} {
+
+    @extend %text_m;
+    border-collapse: collapse;
+
+    &__caption {
+        margin-bottom: 15px;
+    }
+
+    &__th {
+        width: 155px;
+    }
+
+    &__caption,
+    &__th {
+        color: $bluey-grey;
+        text-align: left;
+    }
+
+    &__th,
+    &__td {
+        padding: 4px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+
+   &__td {
+       color: $charcoal-grey;
+   }
+}

@@ -1,0 +1,214 @@
+$contentDefaultSelector: '.content-default';
+
+#{$contentDefaultSelector} {
+    padding: 85px 0 80px;
+    @include row();
+
+    @media #{$media-tablet} {
+        padding: 35px 0 45px;
+    }
+
+    @media #{$media-phone} {
+        padding: 0;
+    }
+
+    &__left-panel {
+        float: left;
+        width: 320px;
+        padding-top: 65px;
+        background-color: $black-lighter;
+
+        @media #{$media-tablet} {
+            padding-top: 50px;
+            width: 275px;
+        }
+
+        @media #{$media-tablet-small} {
+            padding: 20px;
+            background-color: $black-soft;
+            float: none;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        padding: 0 45px 0 30px;
+        margin-bottom: 62px;
+
+        @media #{$media-tablet-small} {
+            padding: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn-hamburger {
+        display: none;
+
+        @media #{$media-tablet-small} {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            width: 50px;
+            height: 50px;
+            background: $black-soft;
+            padding: 15px;
+
+            &:after,
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 10px;
+                right: 10px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: $white;
+                transition: background-color .3s linear;
+            }
+
+            &:after {
+                top: 15px;
+            }
+
+            &:before {
+                bottom: 15px;
+            }
+
+            &:hover {
+                &:after,
+                &:before,
+                #{$contentDefaultSelector}__btn-hamburger-line {
+                    background-color: rgba($white, .8);
+                }
+            }
+        }
+    }
+
+    &__btn-hamburger-line {
+        display: block;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 24px;
+        height: 2px;
+        background-color: $white;
+        border-radius: 2px;
+        transition: background-color .3s linear;
+    }
+
+    &__menu-mobile {
+
+        @media #{$media-tablet-small} {
+            position: absolute;
+            top: 75px;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            height: calc(100vh - 75px - 35px);
+            background: rgba($real-black, .9);
+            z-index: 10;
+            display: none;
+        }
+
+        @media #{$media-phone} {
+            height: calc(100vh - 75px);
+        }
+
+        &_open {
+            @media #{$media-tablet-small} {
+                display: block;
+            }
+        }
+    }
+
+    &__menu {
+        @media #{$media-tablet-small} {
+            width: calc(100% + 20px);
+            height: calc(100% - 35px);
+            overflow-y: auto;
+        }
+
+        @media #{$media-phone} {
+            height: 100%;
+        }
+    }
+
+    &__right {
+        margin-left: 320px;
+
+        @media #{$media-tablet} {
+            margin-left: 275px;
+        }
+
+        @media #{$media-tablet-small} {
+            margin-left: 0;
+        }
+    }
+
+    &__heading {
+        padding: 45px 45px 30px 30px;
+        background-color: $azure;
+        color: $dark-blue-grey;
+
+        @media #{$media-tablet} {
+            padding: 35px 45px 25px 30px;
+        }
+
+        @media #{$media-tablet-small} {
+            padding: 20px;
+            padding-top: 25px;
+        }
+
+    }
+
+    &__title {
+        font-family: "OpenSans", "Helvetica", sans-serif;
+        @extend %text-title_l;
+        margin-bottom: 15px;
+    }
+
+    &__subtitle{
+        @extend %text_s;
+    }
+
+    &__content {
+        background-color: $light-grey;
+        padding: 45px 45px 50px 30px;
+
+        @media #{$media-tablet-small} {
+            padding: 35px 20px;
+        }
+    }
+
+    &__table {
+        margin-bottom: 25px;
+
+        @media #{$media-tablet-small} {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__card {
+        margin-bottom: 25px;
+    }
+
+    &__footer {
+        padding: 25px 45px 30px 30px;
+        background-color: $charcoal-grey;
+
+        @media #{$media-tablet-small} {
+            padding: 25px 20px;
+        }
+    }
+
+    &__footer-text {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+}

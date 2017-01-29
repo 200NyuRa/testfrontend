@@ -1,0 +1,20 @@
+include ./../../../node_modules/bemto.jade/bemto
+- pageContainer = true;
+
+
+doctype html
+html(lang='ru')
+    include ../head/head
+
+    +b('body').page
+
+        if(pageContainer)
+            +e.__container
+                block content
+
+        if(!pageContainer)
+            block content
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='.%=static=%js/main%=hash=%%=min=%.js')
+

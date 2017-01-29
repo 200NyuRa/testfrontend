@@ -1,0 +1,6 @@
+mixin heading(data)
+	- data = data || {};
+
+	+b.heading&attributes(attributes)
+		+e(data.tag ? data.tag : 'h2').__title!= data.title
+		+e('div').__subtitle!= data.subtitle

@@ -1,0 +1,9 @@
+mixin logo(data)
+    - data = data || {};
+
+        if(data.tag==='a')
+            +b('a').logo(href=data.href)&attributes(attributes)
+                +e('img').__img(src=data.src width=data.imgWidth height=data.imgHeight)
+        else
+            +b('span').logo&attributes(attributes)
+                +e('img').__img(src=data.src width=data.imgWidth height=data.imgHeight)

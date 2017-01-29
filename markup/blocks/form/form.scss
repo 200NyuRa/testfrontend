@@ -1,0 +1,133 @@
+$lableSelector: ".label";
+
+#{$lableSelector} {
+    display: block;
+    @extend %text_m;
+    color: $bluey-grey;
+    margin-bottom: 4px;
+
+    &_val {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        margin-bottom: 0;
+    }
+}
+
+$fieldSelector: ".field";
+
+#{$fieldSelector} {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+
+    &_select {
+        max-width: 92px;
+        min-width: 70px;
+        width: auto;
+    }
+
+    &_icon {
+        position: relative;
+    }
+
+    &_hint {
+        &:after {
+            content: "?";
+            display: block;
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 0;
+            bottom: 0;
+            right: 8px;
+            margin: auto 0;
+            border: 1px solid $silver;
+            border-radius: 50%;
+            font-size: 16px;
+            line-height: 27px;
+            text-align: center;
+            color: $silver;
+        }
+    }
+
+    &_inline + #{$fieldSelector}_inline {
+        margin-left: 6px;
+
+        @media #{$media-phone} {
+            margin-left: 4px;
+        }
+    }
+
+    &_s {
+        width: 65px;
+
+        @media #{$media-phone} {
+            width: 58px;
+        }
+    }
+
+    &_m {
+        width: 140px;
+    }
+
+    &__input {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: $white;
+        border: solid 1px $pale-grey;
+        @extend %text_m;
+        color: $charcoal-grey;
+        outline: 0;
+        cursor: pointer;
+        transition: border-color .3s linear;
+
+        @include placeholder {
+
+            color: $silver;
+        }
+
+        &:hover {
+            border-color: $silver;
+        }
+
+        &:focus {
+            border-color: $silver-darck;
+
+            @include placeholder {
+                color: transparent;
+            }
+        }
+
+        &_select {
+            &:required:invalid {
+                color: $silver;
+            }
+        }
+
+        &_hint {
+            padding-right: 40px;
+        }
+
+        &_center {
+            text-align: center;
+        }
+
+        &_error,
+        &_error:focus,
+        &_error:hover {
+            border-color: $error;
+        }
+    }
+}
+
+
+option[value=''][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+

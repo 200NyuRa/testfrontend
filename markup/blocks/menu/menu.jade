@@ -1,0 +1,9 @@
+mixin menu(data)
+    - data= data || {};
+
+    +b('nav').menu&attributes(attributes)
+        each link, index in data
+            +e('a').__link(
+                href= (index == 1) ? '' : link.href
+            )
+                != link.text

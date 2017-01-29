@@ -1,0 +1,18 @@
+include ./../../node_modules/bemto.jade/bemto
+
+extends ../blocks/layout-default/layout-default
+include ../blocks/content-default/content-default
+include ../blocks/table/table
+include ../blocks/form-card/form-card
+
+block head
+    - var pageTitle = 'Тестовое задание';
+
+block content
+    +content-default(contentDefault.default)
+        //table
+        +table(table.payment).__table
+        //end:/table
+        //form-card
+        +form-card().__form-card
+        //end:/form-card

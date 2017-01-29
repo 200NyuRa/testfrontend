@@ -1,0 +1,90 @@
+include ../form/form
+include ../title/title
+include ../btn/btn
+
+mixin form-card(data)
+    +b.form-card
+        +title({title: 'Данные банковской карты'})
+
+        +e('form')(action='/echo' method='post').__form
+            +e.__card
+                +e.__fieldset._frontside
+                    +e.__row
+                        +label({
+                            title: 'Номер карты'
+                        })
+                        +e.__field-wrapper
+                            +field({
+                                mod: ['_inline', '_s'],
+                                type: 'text',
+                                id: 'cardNumber1',
+                                name: 'cardNumber1',
+                                placeholder: '0000'
+                            }).__number._center
+                            +field({
+                                mod: ['_inline', '_s'],
+                                type: 'text',
+                                id: 'cardNumber2',
+                                name: 'cardNumber2',
+                                placeholder: '0000'
+                            }).__number._center
+                            +field({
+                                mod: ['_inline', '_s'],
+                                type: 'text',
+                                id: 'cardNumber3',
+                                name: 'cardNumber3',
+                                placeholder: '0000'
+                            }).__number._center
+                            +field({
+                                mod: ['_inline', '_s'],
+                                type: 'text',
+                                id: 'cardNumber4',
+                                name: 'cardNumber4',
+                                placeholder: '0000'
+                            }).__number._center
+                            +field({
+                                type: 'hidden',
+                                name: 'cardNumber'
+                            })
+                    +e.__row
+                        +label({
+                            title: 'Срок действия'
+                        })
+                        +field({
+                            mod: ['_inline', '_select'],
+                            type: 'select',
+                            name: 'month',
+                            options: [4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        })
+                        +field({
+                            mod: ['_inline', '_select'],
+                            type: 'select',
+                            name: 'year',
+                            options: [2018, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
+                            2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+                        })
+                    +e.__row
+                        +field({
+                            type: 'text',
+                            id: 'cardholder',
+                            name: 'cardholder',
+                            placeholder: 'Держатель карты'
+                        })
+                +e.__fieldset._backside
+                    +e.__row
+                        +label({
+                            title: 'Код CVV2 / CVC2'
+                        })
+                        +field({
+                            mod: ['_m', '_icon', '_hint'],
+                            type: 'password',
+                            id: 'iCVC',
+                            name: 'iCVC',
+                            placeholder: '000'
+                        })._hint
+
+            +btn({
+                tag: 'button',
+                type: 'submit',
+                text: 'Оплатить'
+            }).__btn

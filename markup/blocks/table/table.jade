@@ -1,0 +1,21 @@
+mixin table(data)
+    - data = data || {};
+    - dataRows = data.rows || [];
+
+    +b('table').table&attributes(attributes)
+
+        if data.caption
+            +e('caption').__caption!= data.caption
+
+        if data.head
+            +e('tr').__head
+                each th in  data.head
+                    +e('th').__th!= th
+
+        each rows in dataRows
+            +e('tr').__tr
+                each col in rows
+                    if col.th
+                        +e('th').__th!= col.text
+                    else
+                        +e('td').__td!= col

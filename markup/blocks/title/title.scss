@@ -1,0 +1,8 @@
+$titleSelector: '.title';
+
+#{$titleSelector} {
+    font-family: "OpenSans", "Helvetica", sans-serif;
+    @extend %text-title;
+    margin-bottom: 25px;
+    color: $charcoal-grey-lightest;
+}

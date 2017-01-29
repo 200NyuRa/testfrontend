@@ -1,0 +1,8 @@
+
+$pageSelector: '.page';
+
+#{$pageSelector} {
+    &__container {
+        @include container();
+    }
+}

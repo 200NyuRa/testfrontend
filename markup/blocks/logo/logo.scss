@@ -1,0 +1,11 @@
+$logoSelector: ".logo";
+
+#{$logoSelector} {
+    display: block;
+
+    &__img {
+        display: block;
+        max-width: 245px;
+        height: auto;
+    }
+}
